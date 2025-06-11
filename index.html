@@ -90,11 +90,11 @@
     const bgMusic = document.getElementById("bgMusic");
     const toggleBtn = document.createElement("button");
     toggleBtn.id = "toggleAudio";
-    toggleBtn.textContent = "Turn Off Music";
+    toggleBtn.textContent = "Turn On Music";
     toggleBtn.onclick = () => {
       if (bgMusic.paused) {
         bgMusic.play();
-        toggleBtn.textContent = "Turn Off Music";
+        toggleBtn.textContent = "Turn On Music";
       } else {
         bgMusic.pause();
         toggleBtn.textContent = "Turn On Music";
