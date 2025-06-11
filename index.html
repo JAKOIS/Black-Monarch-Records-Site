@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Black Monarch Records</title>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Archivo Black', sans-serif;
+      background-color: #0c0c0c;
+      color: #f0e6d2;
+    }
+    header {
+      background: url('HERO_IMAGE_URL') center/cover no-repeat;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #fff;
+    }
+    header h1 {
+      font-size: 4rem;
+      margin-bottom: 1rem;
+    }
+    header p {
+      font-size: 1.5rem;
+      max-width: 700px;
+    }
+    section {
+      padding: 4rem 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .characters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+    }
+    .character-card {
+      background: #1a1a1a;
+      border-radius: 10px;
+      overflow: hidden;
+      max-width: 220px;
+      text-align: center;
+    }
+    .character-card img {
+      width: 100%;
+      display: block;
+    }
+    .character-card h3 {
+      margin: 0.5rem 0;
+    }
+    footer {
+      background: #1a1a1a;
+      padding: 2rem;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+    .contact a {
+      color: #f0e6d2;
+      text-decoration: none;
+    }
+    #audio-controls {
+      text-align: center;
+      margin-top: 1rem;
+    }
+    #toggleAudio {
+      background-color: #f0e6d2;
+      color: #0c0c0c;
+      padding: 0.5rem 1rem;
+      border: none;
+      font-family: 'Archivo Black', sans-serif;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <audio id="bgMusic" loop autoplay>
+    <source src="Crown of Gold.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+  <script>
+    const bgMusic = document.getElementById("bgMusic");
+    const toggleBtn = document.createElement("button");
+    toggleBtn.id = "toggleAudio";
+    toggleBtn.textContent = "Turn Off Music";
+    toggleBtn.onclick = () => {
+      if (bgMusic.paused) {
+        bgMusic.play();
+        toggleBtn.textContent = "Turn Off Music";
+      } else {
+        bgMusic.pause();
+        toggleBtn.textContent = "Turn On Music";
+      }
+    };
+    window.onload = () => {
+      document.getElementById("audio-controls").appendChild(toggleBtn);
+    };
+  </script>
+
+  <header>
+    <h1>Black Monarch Records</h1>
+    <p>Crafted with next-gen AI. Inspired by Al Bell of STAX. The untold soul story begins July 10, 2025.</p>
+  </header>
+
+  <section>
+    <h2>About the Series</h2>
+    <p>
+      Set in 1978 Memphis but brought to life in 2025, Black Monarch Records follows James Bell and his crew as they navigate the highs and horrors of running a Black-owned soul label. Influenced by real history and powered by AI, this micro-series blends vintage grit with next-gen visuals.
+    </p>
+  </section>
+
+  <section>
+    <h2>Meet the Characters</h2>
+    <div class="characters">
+      <div class="character-card">
+        <img src="CHARACTER_IMAGE_JAMES" alt="James Bell">
+        <h3>James Bell</h3>
+      </div>
+      <div class="character-card">
+        <img src="CHARACTER_IMAGE_DANTE" alt="Bones Jackson">
+        <h3>Bones Jackson</h3>
+      </div>
+      <div class="character-card">
+        <img src="CHARACTER_IMAGE_BONES" alt="Dante">
+        <h3>Dante</h3>
+      </div>
+      <div class="character-card">
+        <img src="CHARACTER_IMAGE_GLO" alt="Mama Glo">
+        <h3>Mama Glo</h3>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>The Studio</h2>
+    <img src="STUDIO_IMAGE_URL" alt="Black Monarch Records Building" style="width:100%; border-radius:10px;">
+    <div id="audio-controls"></div>
+  </section>
+
+  <footer>
+    <p class="contact">Contact: <a href="mailto:info@blackmonarchrecords.com">info@blackmonarchrecords.com</a></p>
+    <p>Follow us: @BlackMonarchRecords</p>
+    <p>© 2025 JAKOIS LLC. All rights reserved.</p>
+  </footer>
+</body>
+</html>
